@@ -1,0 +1,14 @@
+function tc {
+  t i -a "$1" "$3" ; t o -a "$2" ;
+}
+
+function tmg {
+  params="${@-"-s 'today'"}"
+  t d all "$params" -f datesheet | sort -n -k 2.1 -k 2.2 -k 2.3| sort -n -k1
+}
+
+alias tt="timetrap today"
+alias ti="timetrap in"
+alias to="timetrap out"
+alias tmgw="tmg -s 'last monday'"
+alias tmgy="tmg -s 'yesterday'"
